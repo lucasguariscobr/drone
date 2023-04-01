@@ -1,0 +1,563 @@
+using module mode; GOMOD=/Users/lucasguarisco/drone/go.mod
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>utils - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="/lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.20.2";</script>
+<script src="/lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/pkg/">GoDoc</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package utils
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "superorbital/drone/utils"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="#BuildNilTestResponse">func BuildNilTestResponse() func(req *http.Request) (*http.Response, error)</a></dd>
+			
+				
+				<dd><a href="#BuildTestResponse">func BuildTestResponse(httpStatusCode int, mockBody string) func(req *http.Request) (*http.Response, error)</a></dd>
+			
+				
+				<dd><a href="#BuildUrl">func BuildUrl() (string, error)</a></dd>
+			
+				
+				<dd><a href="#ErrorBuilder">func ErrorBuilder(httpStatusCode int) error</a></dd>
+			
+				
+				<dd><a href="#ExecHttpRequest">func ExecHttpRequest(httpClient HttpClientInterface, req *http.Request) (*http.Response, error)</a></dd>
+			
+				
+				<dd><a href="#MockOsReadFile">func MockOsReadFile(jsonPayload string)</a></dd>
+			
+				
+				<dd><a href="#ParseJsonRawResponse">func ParseJsonRawResponse(httpResponseBody io.ReadCloser) (json.RawMessage, error)</a></dd>
+			
+				
+				<dd><a href="#ReadJsonPayload">func ReadJsonPayload(jsonFilePath string) (*json.RawMessage, error)</a></dd>
+			
+				
+				<dd><a href="#ValidateDroneModelJson">func ValidateDroneModelJson(jsonRawData *json.RawMessage) error</a></dd>
+			
+			
+				
+				<dd><a href="#DroneType">type DroneType</a></dd>
+				
+				
+			
+				
+				<dd><a href="#HttpClientInterface">type HttpClientInterface</a></dd>
+				
+				
+			
+				
+				<dd><a href="#IntegratedLogger">type IntegratedLogger</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#IntegratedLogger.Printf">func (i IntegratedLogger) Printf(format string, v ...interface{})</a></dd>
+				
+			
+				
+				<dd><a href="#MockHttpClient">type MockHttpClient</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#MockHttpClient.Do">func (m MockHttpClient) Do(req *http.Request) (*http.Response, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/superorbital/drone/utils/config.go">config.go</a>
+			
+				<a href="/src/superorbital/drone/utils/drone_model.go">drone_model.go</a>
+			
+				<a href="/src/superorbital/drone/utils/errors.go">errors.go</a>
+			
+				<a href="/src/superorbital/drone/utils/file_utils.go">file_utils.go</a>
+			
+				<a href="/src/superorbital/drone/utils/http_client.go">http_client.go</a>
+			
+				<a href="/src/superorbital/drone/utils/http_utils.go">http_utils.go</a>
+			
+				<a href="/src/superorbital/drone/utils/log_utils.go">log_utils.go</a>
+			
+				<a href="/src/superorbital/drone/utils/test_utils.go">test_utils.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const <span id="API_ENDPOINT">API_ENDPOINT</span> = &#34;drones&#34;</pre>
+			
+				
+				<pre>const <span id="API_TIMEOUT">API_TIMEOUT</span> = 10</pre>
+			
+				
+				<pre>const <span id="AUTHORIZATION_HEADER">AUTHORIZATION_HEADER</span> = &#34;Authorization&#34;</pre>
+			
+				
+				<pre>const <span id="CONFIG_PREFIX">CONFIG_PREFIX</span> = &#34;drone&#34;</pre>
+			
+				
+				<pre>const <span id="CONFIG_VALUE_ADDR">CONFIG_VALUE_ADDR</span> = &#34;addr&#34;</pre>
+			
+				
+				<pre>const <span id="CONFIG_VALUE_MAX_RETRIES">CONFIG_VALUE_MAX_RETRIES</span> = &#34;max_retries&#34;</pre>
+			
+				
+				<pre>const <span id="CONFIG_VALUE_TOKEN">CONFIG_VALUE_TOKEN</span> = &#34;token&#34;</pre>
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="ErrBadRequest">ErrBadRequest</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;bad Request&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDroneCost">ErrCreateDroneCost</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;new drones should not include cost&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDroneInstructionIndex">ErrCreateDroneInstructionIndex</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;the instruction index couldn&#39;t be converted to a numeric index&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDroneMissingType">ErrCreateDroneMissingType</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;the type is required to create a drone&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDronePlanLastInstruction">ErrCreateDronePlanLastInstruction</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;the last instruction from the drone plan must be a landing command&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDronePlanLength">ErrCreateDronePlanLength</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;the drone plan must be at least one instruction long&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDroneStatus">ErrCreateDroneStatus</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;new drones should not include status&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrCreateDroneType">ErrCreateDroneType</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;the drone type must be one of: quadcopter-small, quadcopter-large, plane-small, single-rotor-large&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrInternalServer">ErrInternalServer</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;internal Server Error&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrMissingAddr">ErrMissingAddr</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;no API Address available. Configure DRONE_ADDR&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrMissingToken">ErrMissingToken</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;no Authorization token available. Configure DRONE_TOKEN&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrTooManyRequests">ErrTooManyRequests</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;too many requests. Consider setting DRONE_MAX_RETRIES to define a maximum number of retries when certain errors codes are encountered&#34;)</pre>
+			
+				
+				<pre>var <span id="ErrUnauthorized">ErrUnauthorized</span> = <a href="/pkg/errors/">errors</a>.<a href="/pkg/errors/#New">New</a>(&#34;unauthorized access. Check that DRONE_TOKEN was correctly set and that DRONE_ADDR is pointing to the correct backend&#34;)</pre>
+			
+		
+		
+			
+			
+			<h2 id="BuildNilTestResponse">func <a href="/src/superorbital/drone/utils/test_utils.go?s=361:436#L9">BuildNilTestResponse</a>
+				<a class="permalink" href="#BuildNilTestResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BuildNilTestResponse() func(req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="BuildTestResponse">func <a href="/src/superorbital/drone/utils/test_utils.go?s=56:163#L1">BuildTestResponse</a>
+				<a class="permalink" href="#BuildTestResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BuildTestResponse(httpStatusCode <a href="/pkg/builtin/#int">int</a>, mockBody <a href="/pkg/builtin/#string">string</a>) func(req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="BuildUrl">func <a href="/src/superorbital/drone/utils/http_utils.go?s=361:392#L7">BuildUrl</a>
+				<a class="permalink" href="#BuildUrl">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BuildUrl() (<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>BuildUrl uses the DRONE_ADDR environment variable
+and the API_ENDPOINT constant value to create the base API URL.
+The DRONE_ADDR doesn&apos;t have a default value and the function
+will throw an error if the value is not set.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ErrorBuilder">func <a href="/src/superorbital/drone/utils/errors.go?s=149:192#L1">ErrorBuilder</a>
+				<a class="permalink" href="#ErrorBuilder">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ErrorBuilder(httpStatusCode <a href="/pkg/builtin/#int">int</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>ErrorBuilder will return custom errors for the HTTP
+Status Codes that were mapped by the API.
+
+			
+			
+
+		
+			
+			
+			<h2 id="ExecHttpRequest">func <a href="/src/superorbital/drone/utils/http_utils.go?s=907:1002#L28">ExecHttpRequest</a>
+				<a class="permalink" href="#ExecHttpRequest">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ExecHttpRequest(httpClient <a href="#HttpClientInterface">HttpClientInterface</a>, req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>ExecHttpRequest executes the HTTP Request.
+It configures the Authorization Header using the DRONE_TOKEN environment variable.
+
+			
+			
+
+		
+			
+			
+			<h2 id="MockOsReadFile">func <a href="/src/superorbital/drone/utils/test_utils.go?s=521:560#L15">MockOsReadFile</a>
+				<a class="permalink" href="#MockOsReadFile">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MockOsReadFile(jsonPayload <a href="/pkg/builtin/#string">string</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="ParseJsonRawResponse">func <a href="/src/superorbital/drone/utils/http_utils.go?s=1421:1503#L45">ParseJsonRawResponse</a>
+				<a class="permalink" href="#ParseJsonRawResponse">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ParseJsonRawResponse(httpResponseBody <a href="/pkg/io/">io</a>.<a href="/pkg/io/#ReadCloser">ReadCloser</a>) (<a href="/pkg/encoding/json/">json</a>.<a href="/pkg/encoding/json/#RawMessage">RawMessage</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>ParseJsonRawResponse parses the HTTP Response
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadJsonPayload">func <a href="/src/superorbital/drone/utils/file_utils.go?s=212:279#L4">ReadJsonPayload</a>
+				<a class="permalink" href="#ReadJsonPayload">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ReadJsonPayload(jsonFilePath <a href="/pkg/builtin/#string">string</a>) (*<a href="/pkg/encoding/json/">json</a>.<a href="/pkg/encoding/json/#RawMessage">RawMessage</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>ReadJsonPayload receives a file path, reads it, and parses its content to
+a JSON RawMessage
+
+			
+			
+
+		
+			
+			
+			<h2 id="ValidateDroneModelJson">func <a href="/src/superorbital/drone/utils/drone_model.go?s=1181:1244#L39">ValidateDroneModelJson</a>
+				<a class="permalink" href="#ValidateDroneModelJson">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ValidateDroneModelJson(jsonRawData *<a href="/pkg/encoding/json/">json</a>.<a href="/pkg/encoding/json/#RawMessage">RawMessage</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>ValidateDroneModelJson receives a JSON RawMessage and validates it.
+The validation rules map the constraints from the drone model documentation.
+Returns an error if any issue is found.
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="DroneType">type <a href="/src/superorbital/drone/utils/drone_model.go?s=85:106#L1">DroneType</a>
+				<a class="permalink" href="#DroneType">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type DroneType <a href="/pkg/builtin/#string">string</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="Unknown">Unknown</span>          <a href="#DroneType">DroneType</a> = &#34;&#34;
+    <span id="QuadcopterSmall">QuadcopterSmall</span>  <a href="#DroneType">DroneType</a> = &#34;quadcopter-small&#34;
+    <span id="QuadcopterLarge">QuadcopterLarge</span>  <a href="#DroneType">DroneType</a> = &#34;quadcopter-large&#34;
+    <span id="PlaneSmall">PlaneSmall</span>       <a href="#DroneType">DroneType</a> = &#34;plane-small&#34;
+    <span id="SingleRotorLarge">SingleRotorLarge</span> <a href="#DroneType">DroneType</a> = &#34;single-rotor-large&#34;
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HttpClientInterface">type <a href="/src/superorbital/drone/utils/http_client.go?s=76:161#L1">HttpClientInterface</a>
+				<a class="permalink" href="#HttpClientInterface">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type HttpClientInterface interface {
+    Do(req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IntegratedLogger">type <a href="/src/superorbital/drone/utils/log_utils.go?s=51:83#L1">IntegratedLogger</a>
+				<a class="permalink" href="#IntegratedLogger">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IntegratedLogger struct {
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="IntegratedLogger.Printf">func (IntegratedLogger) <a href="/src/superorbital/drone/utils/log_utils.go?s=85:150#L1">Printf</a>
+					<a class="permalink" href="#IntegratedLogger.Printf">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (i <a href="#IntegratedLogger">IntegratedLogger</a>) Printf(format <a href="/pkg/builtin/#string">string</a>, v ...interface{})</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MockHttpClient">type <a href="/src/superorbital/drone/utils/http_client.go?s=163:260#L3">MockHttpClient</a>
+				<a class="permalink" href="#MockHttpClient">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type MockHttpClient struct {
+    <a href="/pkg/github.com/stretchr/testify/mock/">mock</a>.<a href="/pkg/github.com/stretchr/testify/mock/#Mock">Mock</a>
+<span id="MockHttpClient.MockDo"></span>    MockDo func(req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MockHttpClient.Do">func (MockHttpClient) <a href="/src/superorbital/drone/utils/http_client.go?s=381:450#L10">Do</a>
+					<a class="permalink" href="#MockHttpClient.Do">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="#MockHttpClient">MockHttpClient</a>) Do(req *<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Request">Request</a>) (*<a href="/pkg/net/http/">http</a>.<a href="/pkg/net/http/#Response">Response</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>Do is a mocking method to help testing HTTP Requests.
+Its used to replace the default HTTP Client implementation
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.20.2.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
